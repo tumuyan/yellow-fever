@@ -34,7 +34,7 @@ const App: React.FC = () => {
         
         {/* Main Title - Always visible at the top */}
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-700 flex items-center gap-3 drop-shadow-sm mb-2">
-          黄豆危机 <span className="text-4xl sm:text-5xl filter drop-shadow-md">{EMOJIS.MINE}</span>
+          黄豆危机
         </h1>
 
         <Controls
