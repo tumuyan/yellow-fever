@@ -30,12 +30,8 @@ const Controls: React.FC<ControlsProps> = ({
   return (
     <div className="w-full max-w-fit mx-auto bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/60 flex flex-col md:flex-row items-center gap-4 md:gap-8 transition-all hover:shadow-2xl hover:bg-white/90">
       
-      {/* Group 1: Title & Difficulty */}
+      {/* Group 1: Difficulty */}
       <div className="flex items-center gap-4 w-full md:w-auto justify-center md:justify-start">
-        <h1 className="text-xl font-extrabold text-slate-700 hidden md:block whitespace-nowrap tracking-tight">
-          黄豆危机
-        </h1>
-        
         {/* Difficulty Segmented Control */}
         <div className="flex bg-slate-100/80 p-1.5 rounded-xl border border-slate-200/50">
           {Object.values(DIFFICULTIES).map((diff) => (
