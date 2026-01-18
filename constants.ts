@@ -14,6 +14,7 @@ export const EMOJIS = {
   WORRIED: '😓', // Mouse down on cell
   NORMAL: '🙂',
   DEAD: '😵',
+  VOMIT: '🤮',
 };
 
 export const NUMBER_COLORS = [

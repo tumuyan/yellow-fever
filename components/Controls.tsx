@@ -24,6 +24,9 @@ const Controls: React.FC<ControlsProps> = ({
   const formattedMines = Math.max(-99, Math.min(minesLeft, 999)).toString();
   const formattedTime = Math.min(timer, 999).toString().padStart(3, '0');
 
+  // Switch emoji to vomit if count is negative (too many flags)
+  const minesEmoji = minesLeft < 0 ? EMOJIS.VOMIT : EMOJIS.MINE;
+
   return (
     <div className="w-full max-w-fit mx-auto bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-white/60 flex flex-col md:flex-row items-center gap-4 md:gap-8 transition-all hover:shadow-2xl hover:bg-white/90">
       
@@ -56,9 +59,13 @@ const Controls: React.FC<ControlsProps> = ({
         
         {/* Stats */}
         <div className="flex items-center gap-4 text-slate-600 font-mono font-bold text-lg mx-auto md:mx-0">
-          <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/60 shadow-sm">
-            <span className="text-xl leading-none filter drop-shadow-sm">😅</span>
-            <span className="text-slate-700">{formattedMines}</span>
+          <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/60 shadow-sm transition-colors duration-300">
+            <span className="text-xl leading-none filter drop-shadow-sm transition-transform duration-300 key={minesEmoji}">
+              {minesEmoji}
+            </span>
+            <span className={`text-slate-700 ${minesLeft < 0 ? 'text-orange-600' : ''}`}>
+              {formattedMines}
+            </span>
           </div>
           <div className="flex items-center gap-2 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/60 shadow-sm">
             <span className="text-xl leading-none filter drop-shadow-sm">⏱️</span>
